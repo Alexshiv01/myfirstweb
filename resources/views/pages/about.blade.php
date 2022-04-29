@@ -98,7 +98,11 @@
 
         <div class="section-title">
           <h2>About</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>My name is Shiv Gupta and I am a full-stack Web Application Developer,
+             currently living in Bhairahawa,Nepal. I study Diploma in Computer Engineering from RLNMV, 
+             and my primary focus and inspiration for my studies is Web Development. In my free time, I study human computer interface and the psychology of human computer interaction.
+              I am both driven and self-motivated, and I am constantly experimenting with new technologies and techniques. I am very passionate about Web Development,
+             and strive to better myself as a developer, and the development community as a whole.</p>
         </div>
 
         <div class="row">
@@ -108,8 +112,9 @@
           <div class="col-lg-8 pt-4 pt-lg-0 content">
             <h3>Web Developer &amp;Photographer.</h3>
             <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              I spend my whole day, practically every day, experimenting with HTML, CSS, and JavaScript; dabbling with Python and Ruby; and inhaling a wide variety of potentially useless information through a few hundred RSS feeds. I build websites that delight and inform. I do it well.
+
+              I’m curious, and I enjoy work that challenges me to learn something new and stretch in a different direction.
             </p>
             <div class="row">
               <div class="col-lg-6">
@@ -186,14 +191,21 @@
 
       </div>
     </section><!-- End Facts Section -->
-
+    <div class="section-title">
+      <h2>My Site is Built on Sitecore</h2>
+      <p>The site you are currently viewing is completely original, 
+        and runs on the Xpress version of Sitecore CMS (now version 7.2). 
+        The site also has a much older version written in PHP that uses a rough,
+         custom-built MVC-like architecture. I will make both the .NET 
+         and PHP versions of the site available upon request.
+      </div>
     <!-- ======= Skills Section ======= -->
     <section id="skills" class="skills section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
           <h2>Skills</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>I have been studying web development since 2009 and I develop in both C# and PHP, though I primarily use C#. I am experienced in both front and back-end development, and I am proficient in HTML/HTML5, CSS/CSS3, LESS, SASS, XML, JavaScript, jQuery, AJAX, and SQL/MySQL/PostgreSQL, to name a few. I am also proficient in many non-web-based languages, including but not limited to Java, Scheme/Racket, C, ACL2 (LISP), and MIPS Assembly. I have also worked on some smaller Python projects, and have used the language to create one-time use tools for data processing and similar purposes.</p>
         </div>
 
         <div class="row skills-content">

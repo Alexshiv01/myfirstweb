@@ -1,3 +1,5 @@
+
+
 <!-- Navigation-->
 
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -32,16 +34,18 @@
                     </div>
                     {{-- <li class="nav-item"><a class="nav-link active" aria-current="page"
                         href="{{ route('posts.create') }}">Create</a></li> --}}
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/contact">Contact Us</a>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/contact">Contact
+                        Us</a>
                 </li>
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <div class="form-check form-switch nav-item">
                         <input class="form-check-input active" type="checkbox" id="flexSwitchCheckDefault">
                         <label class="form-check-label active" for="flexSwitchCheckDefault">Dark Mode</label>
-                    </div >
-                </li>
-                    {{-- <li class="nav-item dropdown">
+                    </div>
+                </li> --}}
+                
+                {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Dcom</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/first">First Semester</a>
@@ -78,8 +82,9 @@
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/dashboard">Dashboard</a>
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                     document.getElementById('logout-form').submit();">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                                             document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 

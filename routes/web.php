@@ -31,9 +31,9 @@ route::get('/about','pagescontroller@about');
 route::get('/services','pagescontroller@services');
 route::get('/contact','pagescontroller@Contact');
 
-route::get('/send-email', [Mailcontroller::class, 'sendEmail']);
 
-Route::post('/send-email', [App\Http\Controllers\pagesController::class, 'sendEmail'])->name('contact.send');
+
+Route::post('/send-email', [App\Http\Controllers\Mailcontroller::class, 'sendEmail'])->name('contact.send');
 
 // for posts
 route::resource('posts','Postscontroller');

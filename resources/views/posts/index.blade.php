@@ -1,41 +1,41 @@
 @extends('pages.layout.app')
 @section('content')
-    <h3>Post</h3>
     @if (session()->has('message'))
         <div class="alert alert-success">
             {{ session()->get('message') }}
         </div>
     @endif
-    @if (count($posts) > 0)
-        @foreach ($posts as $post)
-            <div class="well">
+
+    {{-- <div class="well">
                 <div class="row">
                     <div class="col -md-4 col-sm-4">
                         <img style="width:100%" src="{{ asset('/storage/cover_images/' . $post->cover_image) }}" alt="">
                         {{-- <img style="width:100%" src="/storage/cover_images{{$post->cover_image}}" alt=""> --}}
-                    </div>
+    {{-- </div>
                     <div class="col -md-8 col-sm-8">
                         <h3><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h3>
                         <small>Written on {{ date('d-M-Y', strtotime($post->created_at)) }} by {{ $post->user->name }}</small>
 
                     </div>
 
-                </div>
+                </div> --}}
 
-            </div>
-            {{-- this is the template --}}
-            <section class="py-5">
+    {{-- </div> --}}
+    {{-- this is the template --}}
+    @if (count($posts) > 0)
+        <section class="py-5">
 
-                <div class="container px-5">
-                    <h1 class="fw-bolder fs-5 mb-4">Company Blog</h1>
-                    <div class="card border-0 shadow rounded-3 overflow-hidden">
-                        <div class="card-body p-0">
-                            <div class="row gx-0">
+            <div class="container px-5">
+                <h1 class="fw-bolder fs-5 mb-4">Company Blog</h1>
+                <div class="card border-0 shadow rounded-3 overflow-hidden">
+                    <div class="card-body p-0">
+                        <div class="row gx-0">
+                            @foreach ($posts as $post)
                                 <div class="col-lg-6 col-xl-5 py-lg-5">
                                     <div class="p-4 p-md-5">
                                         <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
                                         <div class="h2 fw-bolder">{{ $post->title }}</div>
-                                        <p> {!!$post->body!!}</p>
+                                        <p> {!! $post->body !!}</p>
                                         <a class="stretched-link text-decoration-none" href="/posts/{{ $post->id }}">
                                             Read more
                                             <i class="bi bi-arrow-right"></i>
@@ -46,16 +46,19 @@
                                     <div class="bg-featured-blog"
                                         style="background-image: url('{{ asset('/storage/cover_images/' . $post->cover_image) }}')">
                                     </div>
+
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
+            </div>
 
-            </section>
-            <section class="py-5 bg-light">
-                <div class="container px-5">
-                    <div class="row gx-5">
+        </section>
+        <section class="py-5 bg-light">
+            <div class="container px-5">
+                <div class="row gx-5">
+                    @foreach ($posts as $post)
                         <div class="col-xl-8">
                             <h2 class="fw-bolder fs-5 mb-4">News</h2>
                             <!-- News item-->
@@ -66,13 +69,7 @@
                                 </a>
                             </div>
                             <!-- News item-->
-                            <div class="mb-5">
-                                <div class="small text-muted">{{ date('d-M-Y', strtotime($post->created_at)) }}</div>
-                                <a class="link-dark" href="#!">
-                                    <h3>Bootstrap 5 has officially landed</h3>
-                                </a>
-                            </div>
-                            <!-- News item-->
+
                             <div class="mb-5">
                                 <div class="small text-muted">{{ date('d-M-Y', strtotime($post->created_at)) }}</div>
                                 <a class="link-dark" href="#!">
@@ -109,23 +106,25 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
-            </section>
-            <!-- Blog preview section-->
-            <section class="py-5">
-                <div class="container px-5">
-                    <h2 class="fw-bolder fs-5 mb-4">Featured Stories</h2>
-                    <div class="row gx-5">
+            </div>
+        </section>
+        <!-- Blog preview section-->
+        <section class="py-5">
+            <div class="container px-5">
+                <h2 class="fw-bolder fs-5 mb-4">Featured Stories</h2>
+                <div class="row gx-5">
+                    @foreach ($posts as $post)
                         <div class="col-lg-4 mb-5">
                             <div class="card h-100 shadow border-0">
                                 <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
                                     <a class="text-decoration-none link-dark stretched-link" href="#!">
-                                        <div class="h5 card-title mb-3">{{ $post->title }}</div>
+                                        <div class="h5 card-title mb-3"> </div>
                                     </a>
-                                    <p class="card-text mb-0"> {!!$post->body!!}</p>
+                                    <p class="card-text mb-0"> </p>
                                 </div>
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                     <div class="d-flex align-items-end justify-content-between">
@@ -133,72 +132,29 @@
                                             <img class="rounded-circle me-3"
                                                 src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
                                             <div class="small">
-                                                <div class="fw-bold">{{ $post->user->name }}</div>
-                                                <div class="text-muted">{{ date('d-M-Y', strtotime($post->created_at)) }}&middot; 6 min read</div>
+                                                <div class="fw-bold"> </div>
+                                                <div class="text-muted">
+                                                    &middot; 6 min
+                                                    read</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 mb-5">
-                            <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="https://dummyimage.com/600x350/adb5bd/495057" alt="..." />
-                                <div class="card-body p-4">
-                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Media</div>
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!">
-                                        <div class="h5 card-title mb-3">{{ $post->title }}</div>
-                                    </a>
-                                    <p class="card-text mb-0"> {!!$post->body!!}</p>
-                                </div>
-                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                    <div class="d-flex align-items-end justify-content-between">
-                                        <div class="d-flex align-items-center">
-                                            <img class="rounded-circle me-3"
-                                                src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                                            <div class="small">
-                                                <div class="fw-bold">{{ $post->user->name }}</div>
-                                                <div class="text-muted">{{ date('d-M-Y', strtotime($post->created_at)) }}&middot; 4 min read</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mb-5">
-                            <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="..." />
-                                <div class="card-body p-4">
-                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!">
-                                        <div class="h5 card-title mb-3">{{ $post->title }}</div>
-                                    </a>
-                                    <p class="card-text mb-0"> {!!$post->body!!}</p>
-                                </div>
-                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                    <div class="d-flex align-items-end justify-content-between">
-                                        <div class="d-flex align-items-center">
-                                            <img class="rounded-circle me-3"
-                                                src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                                            <div class="small">
-                                                <div class="fw-bold">{{ $post->user->name }}</div>
-                                                <div class="text-muted">{{ date('d-M-Y', strtotime($post->created_at)) }} &middot; 10 min read</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-end mb-5 mb-xl-0">
-                        <a class="text-decoration-none" href="#!">
-                            More stories
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
+                    @endforeach
+                    {{-- //////////////////////////////////////////////////////////////////// --}}
+
                 </div>
-            </section>
-        @endforeach
+                <div class="text-end mb-5 mb-xl-0">
+                    <a class="text-decoration-none" href="#!">
+                        More stories
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         {{-- {{ $posts->links() }} --}}
     @else
         <p>NO posts found</p>

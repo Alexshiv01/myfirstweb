@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
-use illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
 
 class Mailcontroller extends Controller
@@ -18,8 +18,11 @@ class Mailcontroller extends Controller
             'subject' => $request->subject,
             'msg' => $request->msg
         ];
+
         Mail::to('dreamyshivanpg@gmail.com')->send(new contactMail($details)); 
         return view('emails.Mail');
-        return 'Thanks for reacting out!';
+        
+       // return 'Thanks for reacting out!';
+    
     }
 }

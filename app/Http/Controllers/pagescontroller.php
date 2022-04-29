@@ -18,7 +18,7 @@ class pagescontroller extends Controller
         // $title= 'welcom to laravel';
         // return view('pages.index', compact('title'));
         // return view('pages.index')->with('title',$title);//same think compact
-        $posts = Post::latest()->take(1)->get();
+        $posts = Post::latest()->take(3)->get();
 
         // $posts = Post::orderBy('created_at', 'desc')->take(2)->get();
         return view('pages.index')->with('posts', $posts);
@@ -33,20 +33,7 @@ class pagescontroller extends Controller
 
         return view('pages.contact');
     }
-    public function sendEmail(Request $request)
-    {
-        // $details = [
-        //     'name' => $request->name,
-        //     'email' => $request->email,
-
-        //     'subject' => $request->subject,
-        //     'msg' => $request->msg
-        // ];
-        
-     //   Mail::to('dreamyshivanpg@gmail.com')->send(new contactMail($details));
-        // return back()->with('message send', 'Your message has been sent Successfully !');
-       // return 'Thanks for reacting out!';
-    }
+  
 
     public function services()
     {

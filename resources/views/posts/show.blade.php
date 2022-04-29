@@ -51,6 +51,7 @@
                             <p class="fs-5 mb-4"> {!! $post->body !!} </p>
                         </section>
                     </article>
+                    
                     <!-- Comments section-->
                     <section>
                         <div class="card bg-light">
@@ -66,17 +67,14 @@
                                             src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
                                     <div class="ms-3">
                                         <div class="fw-bold">Commenter Name</div>
-                                        If you're going to lead a space frontier, it has to be government; it'll never be
-                                        private enterprise. Because the space frontier is dangerous, and it's expensive, and
-                                        it has unquantified risks.
+                                        ........
                                         <!-- Child comment 1-->
                                         <div class="d-flex mt-4">
                                             <div class="flex-shrink-0"><img class="rounded-circle"
                                                     src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
                                             <div class="ms-3">
                                                 <div class="fw-bold">Commenter Name</div>
-                                                And under those conditions, you cannot establish a capital-market evaluation
-                                                of that enterprise. You can't get investors.
+                                               ......
                                             </div>
                                         </div>
                                         <!-- Child comment 2-->
@@ -85,7 +83,7 @@
                                                     src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
                                             <div class="ms-3">
                                                 <div class="fw-bold">Commenter Name</div>
-                                                When you put money directly to a problem, it makes a good headline.
+                                               ..................
                                             </div>
                                         </div>
                                     </div>
@@ -96,8 +94,7 @@
                                             src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
                                     <div class="ms-3">
                                         <div class="fw-bold">Commenter Name</div>
-                                        When I look at the universe and all the ways the universe wants to kill us, I find
-                                        it hard to reconcile that with statements of beneficence.
+                                        .......................
                                     </div>
                                 </div>
                             </div>
@@ -108,6 +105,7 @@
         </div>
     </section>
     @if (!Auth::guest())
+    <div class="row gx-5">
         @if (Auth::user()->id == $post->user_id)
             <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-success">Edit</a>
             <form method="post" action="{{ route('posts.destroy', $post->id) }}">
@@ -116,6 +114,7 @@
                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>
             </form>
         @endif
+    </div>
     @endif
 
 
